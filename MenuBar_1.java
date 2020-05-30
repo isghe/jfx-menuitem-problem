@@ -20,7 +20,7 @@ public class MenuBar_1 extends Application {
 		s.setTitle("creating MenuBar"); 
 
 		// create a menu 
-		Menu m = new Menu("Menu"); 
+		Menu m = new Menu("Menu");
 
 		MenuItem [] menuItems = {
 			new MenuItem("menu_item_1"),
@@ -34,6 +34,16 @@ public class MenuBar_1 extends Application {
 			new MenuItem("_id_menu item 9")
 		};
 
+		Label label = new Label("no menu item selected");
+		// create events for menu items
+		// action event
+		EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent e)
+			{
+				label.setText(((MenuItem)e.getSource()).getText() + " selected");
+			}
+		};
+
 		for (MenuItem menuItem: menuItems){
 			m.getItems().add(menuItem);
 		}
@@ -42,19 +52,21 @@ public class MenuBar_1 extends Application {
 		while (listIterator.hasNext ()){
 			MenuItem next = listIterator.next ();
 			System.out.println (next.getText());
+			next.setOnAction (event);
 		}
 
 		// create a menubar 
-		MenuBar mb = new MenuBar(); 
+		MenuBar mb = new MenuBar();
 
-		// add menu to menubar 
-		mb.getMenus().add(m); 
+		// add menu to menubar
+		mb.getMenus().add(m);
 
 		// create a VBox 
-		VBox vb = new VBox(mb); 
+		VBox vb = new VBox(mb, label);
+		vb.setAlignment(javafx.geometry.Pos.TOP_CENTER);
 
 		// create a scene 
-		Scene sc = new Scene(vb, 500, 300); 
+		Scene sc = new Scene(vb, 500, 300);
 
 		// set the scene 
 		s.setScene(sc); 
