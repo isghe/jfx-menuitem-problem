@@ -9,7 +9,8 @@ import javafx.event.EventHandler;
 import javafx.scene.control.*; 
 import javafx.stage.Stage; 
 import javafx.scene.control.Alert.AlertType; 
-import java.time.LocalDate; 
+import java.time.LocalDate;
+import java.util.ListIterator;
 public class MenuBar_1 extends Application { 
 
 	// launch the application 
@@ -35,6 +36,12 @@ public class MenuBar_1 extends Application {
 
 		for (MenuItem menuItem: menuItems){
 			m.getItems().add(menuItem);
+		}
+
+		ListIterator <MenuItem> listIterator = m.getItems().listIterator ();
+		while (listIterator.hasNext ()){
+			MenuItem next = listIterator.next ();
+			System.out.println (next.getText());
 		}
 
 		// create a menubar 
