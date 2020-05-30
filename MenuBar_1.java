@@ -21,15 +21,21 @@ public class MenuBar_1 extends Application {
 		// create a menu 
 		Menu m = new Menu("Menu"); 
 
-		// create menuitems 
-		MenuItem m1 = new MenuItem("menu item 1"); 
-		MenuItem m2 = new MenuItem("menu item 2"); 
-		MenuItem m3 = new MenuItem("menu item 3"); 
+		MenuItem [] menuItems = {
+			new MenuItem("menu_item_1"),
+			new MenuItem("menu-item 2"),
+			new MenuItem("menu-item_3"),
+			new SeparatorMenuItem(),
+			new MenuItem("_"),
+			new MenuItem("__"),
+			new MenuItem("_menu item 7"),
+			new MenuItem("__menu item 8"),
+			new MenuItem("_id_menu item 9")
+		};
 
-		// add menu items to menu 
-		m.getItems().add(m1); 
-		m.getItems().add(m2); 
-		m.getItems().add(m3); 
+		for (MenuItem menuItem: menuItems){
+			m.getItems().add(menuItem);
+		}
 
 		// create a menubar 
 		MenuBar mb = new MenuBar(); 
