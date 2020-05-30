@@ -48,12 +48,10 @@ public class MenuBar_1 extends Application {
 			m.getItems().add(menuItem);
 		}
 
-		ListIterator <MenuItem> listIterator = m.getItems().listIterator ();
-		while (listIterator.hasNext ()){
-			MenuItem next = listIterator.next ();
-			System.out.println (next.getText());
-			next.setOnAction (event);
-		}
+		m.getItems().forEach (menuItem ->{
+			System.out.println (menuItem.getText());
+			menuItem.setOnAction (event);
+		});
 
 		// create a menubar 
 		MenuBar mb = new MenuBar();
