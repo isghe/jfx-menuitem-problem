@@ -18,6 +18,13 @@ public class MenuBar_1 extends Application {
 	{ 
 		// set title for the stage 
 		s.setTitle("creating MenuBar"); 
+		String osName = System.getProperty("os.name");
+		String osArch = System.getProperty("os.arch");
+		String osVersion = System.getProperty("os.version");
+		String javaVersion = System.getProperty("java.version");
+		String javafxVersion = System.getProperty("javafx.version");
+		Label labelOS = new Label ("os.name: " + osName + ", os.arch: " + osArch + ", os.version: " + osVersion + ".");
+		Label labelJava = new Label("javafx.version: " + javafxVersion + ", java.version: " + javaVersion + ".");
 
 		// create a menu 
 		Menu m = new Menu("Menu");
@@ -34,13 +41,13 @@ public class MenuBar_1 extends Application {
 			new MenuItem("_id_menu item 9")
 		};
 
-		Label label = new Label("no menu item selected");
+		Label labelSelected = new Label("Item selected: none");
 		// create events for menu items
 		// action event
 		EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e)
 			{
-				label.setText(((MenuItem)e.getSource()).getText() + " selected");
+				labelSelected.setText("Item selected: " +((MenuItem)e.getSource()).getText());
 			}
 		};
 
@@ -60,7 +67,7 @@ public class MenuBar_1 extends Application {
 		mb.getMenus().add(m);
 
 		// create a VBox 
-		VBox vb = new VBox(mb, label);
+		VBox vb = new VBox(mb, labelOS, labelJava, labelSelected);
 		vb.setAlignment(javafx.geometry.Pos.TOP_CENTER);
 
 		// create a scene 
