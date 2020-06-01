@@ -23,8 +23,8 @@ public class MenuBar_1 extends Application {
 		String osVersion = System.getProperty("os.version");
 		String javaVersion = System.getProperty("java.version");
 		String javafxVersion = System.getProperty("javafx.version");
-		Label labelOS = new Label ("os.name: " + osName + ", os.arch: " + osArch + ", os.version: " + osVersion + ".");
-		Label labelJava = new Label("javafx.version: " + javafxVersion + ", java.version: " + javaVersion + ".");
+		Label labelOS = new Label ("os.name: " + osName + ";\nos.arch: " + osArch + ";\nos.version: " + osVersion + ".");
+		Label labelJava = new Label("javafx.version: " + javafxVersion + ";\njava.version: " + javaVersion + ".");
 
 		// create a menu 
 		Menu m = new Menu("Menu");
