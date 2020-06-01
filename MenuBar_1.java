@@ -11,6 +11,9 @@ import javafx.stage.Stage;
 import javafx.scene.control.Alert.AlertType; 
 import java.time.LocalDate;
 import java.util.ListIterator;
+import java.util.List;
+import java.util.Arrays;
+
 public class MenuBar_1 extends Application { 
 
 	// launch the application 
@@ -18,13 +21,20 @@ public class MenuBar_1 extends Application {
 	{ 
 		// set title for the stage 
 		s.setTitle("creating MenuBar"); 
-		String osName = System.getProperty("os.name");
-		String osArch = System.getProperty("os.arch");
-		String osVersion = System.getProperty("os.version");
-		String javaVersion = System.getProperty("java.version");
-		String javafxVersion = System.getProperty("javafx.version");
-		Label labelVersion = new Label ("os.name: " + osName + ";\nos.arch: " + osArch + ";\nos.version: " + osVersion + ";\n\n"
-			+ "javafx.version: " + javafxVersion + ";\njava.version: " + javaVersion + ".");
+
+		List <String> properties = Arrays.asList (
+			"os.name", "os.arch", "os.version",
+			"java.version", "javafx.version"
+		);
+
+		ListIterator <String> listIterator = properties.listIterator ();
+
+		while (listIterator.hasNext ()){
+			String property = listIterator.next ();
+			listIterator.set (property + ": " + System.getProperty(property));
+		}
+
+		Label labelVersion = new Label (String.join (";\n", properties) + ".");
 
 		// create a menu 
 		Menu m = new Menu("Menu");
@@ -53,11 +63,11 @@ public class MenuBar_1 extends Application {
 
 		for (MenuItem menuItem: menuItems){
 			m.getItems().add(menuItem);
+			menuItem.setOnAction (event);
 		}
 
 		m.getItems().forEach (menuItem ->{
 			System.out.println (menuItem.getText());
-			menuItem.setOnAction (event);
 		});
 
 		// create a menubar 
