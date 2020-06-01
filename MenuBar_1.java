@@ -63,11 +63,11 @@ public class MenuBar_1 extends Application {
 
 		for (MenuItem menuItem: menuItems){
 			m.getItems().add(menuItem);
+			menuItem.setOnAction (event);
 		}
 
 		m.getItems().forEach (menuItem ->{
 			System.out.println (menuItem.getText());
-			menuItem.setOnAction (event);
 		});
 
 		// create a menubar 
