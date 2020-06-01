@@ -23,8 +23,8 @@ public class MenuBar_1 extends Application {
 		String osVersion = System.getProperty("os.version");
 		String javaVersion = System.getProperty("java.version");
 		String javafxVersion = System.getProperty("javafx.version");
-		Label labelOS = new Label ("os.name: " + osName + ";\nos.arch: " + osArch + ";\nos.version: " + osVersion + ".");
-		Label labelJava = new Label("javafx.version: " + javafxVersion + ";\njava.version: " + javaVersion + ".");
+		Label labelVersion = new Label ("os.name: " + osName + ";\nos.arch: " + osArch + ";\nos.version: " + osVersion + ";\n\n"
+			+ "javafx.version: " + javafxVersion + ";\njava.version: " + javaVersion + ".");
 
 		// create a menu 
 		Menu m = new Menu("Menu");
@@ -41,13 +41,13 @@ public class MenuBar_1 extends Application {
 			new MenuItem("_id_menu item 9")
 		};
 
-		Label labelSelected = new Label("Item selected: none");
+		Label labelSelected = new Label("\nItem selected: none");
 		// create events for menu items
 		// action event
 		EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent e)
 			{
-				labelSelected.setText("Item selected: " +((MenuItem)e.getSource()).getText());
+				labelSelected.setText("\nItem selected: " +((MenuItem)e.getSource()).getText());
 			}
 		};
 
@@ -67,7 +67,7 @@ public class MenuBar_1 extends Application {
 		mb.getMenus().add(m);
 
 		// create a VBox 
-		VBox vb = new VBox(mb, labelOS, labelJava, labelSelected);
+		VBox vb = new VBox(mb, labelVersion, labelSelected);
 		vb.setAlignment(javafx.geometry.Pos.TOP_CENTER);
 
 		// create a scene 
