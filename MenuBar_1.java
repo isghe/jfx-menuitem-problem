@@ -24,7 +24,7 @@ public class MenuBar_1 extends Application {
 
 		List <String> properties = Arrays.asList (
 			"os.name", "os.arch", "os.version",
-			"java.version", "javafx.version"
+			"java.vendor", "java.version", "javafx.version"
 		);
 
 		ListIterator <String> listIterator = properties.listIterator ();
