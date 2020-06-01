@@ -71,7 +71,7 @@ public class MenuBar_1 extends Application {
 		vb.setAlignment(javafx.geometry.Pos.TOP_CENTER);
 
 		// create a scene 
-		Scene sc = new Scene(vb, 500, 300);
+		Scene sc = new Scene(vb, 512, 342);
 
 		// set the scene 
 		s.setScene(sc); 

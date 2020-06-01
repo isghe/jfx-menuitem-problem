@@ -7,5 +7,3 @@ Version:
 * `macOS Catalina 10.15.5`
 
 ![jfx-menuitem-problem.png](jfx-menuitem-problem.png)
-
-![jfx-menuitem-problem-selected.png](jfx-menuitem-problem-selected.png)
