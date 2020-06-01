@@ -10,7 +10,11 @@ Version:
 	* `Oracle Linux Server 7.6`
 	* `Java 11.07, JavaFX 11.0.2`
 
-![jfx-menuitem-problem-macOS.png](jfx-menuitem-problem-macOS.png)
+On `macOS`:
 
-![jfx-menuitem-problem-linux.png](jfx-menuitem-problem-linux.png)
+![jfx-menuitem-problem-macOS.png](images/jfx-menuitem-problem-macOS.png)
+
+On `Linux`:
+
+![jfx-menuitem-problem-linux.png](images/jfx-menuitem-problem-linux.png)
 
