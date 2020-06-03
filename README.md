@@ -18,3 +18,8 @@ On `Linux`:
 
 ![jfx-menuitem-problem-linux.png](images/jfx-menuitem-problem-linux.png)
 
+The `underscore` problem can be resolved setting the `MenuItem.mnemonicParsingProperty` to `false`:
+
+```
+	menuItem.setMnemonicParsing (false); // to avoid underscore problem
+```

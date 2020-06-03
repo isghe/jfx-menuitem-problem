@@ -62,6 +62,7 @@ public class MenuBar_1 extends Application {
 		};
 
 		for (MenuItem menuItem: menuItems){
+			menuItem.setMnemonicParsing (false); // to avoid underscore problem
 			m.getItems().add(menuItem);
 			menuItem.setOnAction (event);
 		}
