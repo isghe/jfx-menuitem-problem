@@ -54,13 +54,7 @@ public class MenuBar_1 extends Application {
 		Label labelSelected = new Label("\nItem selected: none");
 		// create events for menu items
 		// action event
-		EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent e)
-			{
-				labelSelected.setText("\nItem selected: " +((MenuItem)e.getSource()).getText());
-			}
-		};
-
+		EventHandler<ActionEvent> event = e -> labelSelected.setText("\nItem selected: " +((MenuItem)e.getSource()).getText());
 		for (MenuItem menuItem: menuItems){
 			menuItem.setMnemonicParsing (false); // to avoid underscore problem
 			m.getItems().add(menuItem);
